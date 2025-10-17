@@ -1,5 +1,36 @@
 Project Sentinel AI
 
+```mermaid
+graph TD
+    A[📡 Step 1: Ingestion] --> B[🎯 Step 2: Claim Extraction];
+    B --> C{🕵️‍♀️ Step 3: Agentic Verification};
+    C --> D[Official Checker Agent];
+    C --> E[Media Cross-Referencer Agent];
+    C --> F[Debunker Agent];
+    subgraph Parallel Evidence Gathering
+        D; E; F;
+    end
+    D --> G[⚖️ Step 4: Synthesis & Storage];
+    E --> G;
+    F --> G;
+    G --> H{📢 Step 5: Dissemination};
+    subgraph Instant Broadcast
+        H --> I[🌐 Veritas Timeline Update];
+        H --> J[📧 User Email Alert];
+    end
+
+    style A fill:#e0f2fe,stroke:#3b82f6,stroke-width:2px
+    style B fill:#e0f2fe,stroke:#3b82f6,stroke-width:2px
+    style C fill:#dbeafe,stroke:#3b82f6,stroke-width:2px
+    style D fill:#e0e7ff,stroke:#6366f1,stroke-width:2px
+    style E fill:#e0e7ff,stroke:#6366f1,stroke-width:2px
+    style F fill:#e0e7ff,stroke:#6366f1,stroke-width:2px
+    style G fill:#d1fae5,stroke:#10b981,stroke-width:2px
+    style H fill:#fef3c7,stroke:#f59e0b,stroke-width:2px
+    style I fill:#fce7f3,stroke:#ec4899,stroke-width:2px
+    style J fill:#fce7f3,stroke:#ec4899,stroke-width:2px
+```
+
 DEMO Link : https://dextrobyt.github.io/SentinelAI/
 
 Clarity in Crisis: An Autonomous AI Engine for Real-Time Truth Verification
