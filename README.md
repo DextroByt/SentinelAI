@@ -1,32 +1,38 @@
 Project Sentinel AI
 
 ```mermaid
-graph TD
-    A[📡 Step 1: Ingestion] --> B[🎯 Step 2: Claim Extraction];
-    B --> C{🕵️‍♀️ Step 3: Agentic Verification};
-    C --> D[Official Checker Agent];
-    C --> E[Media Cross-Referencer Agent];
-    C --> F[Debunker Agent];
-    subgraph Parallel Evidence Gathering
-        D; E; F;
-    end
-    D --> G[⚖️ Step 4: Synthesis & Storage];
-    E --> G;
-    F --> G;
-    G --> H{📢 Step 5: Dissemination};
-    subgraph Instant Broadcast
-        H --> I[🌐 Veritas Timeline Update];
-        H --> J[📧 User Email Alert];
+graph LR
+    A((📡 Signal Capture)) --> B([🎯 Noise Filtering & Claim Isolation]);
+    B --> C{🧠 Autonomous Agent Swarm};
+
+    subgraph "Parallel Investigation"
+        C --> D[Verify Official Channels];
+        C --> E[Cross-Reference Media];
+        C --> F[Scan for Known Hoaxes];
     end
 
-    style A fill:#e0f2fe,stroke:#3b82f6,stroke-width:2px
+    D --> G([⚖️ Evidence Synthesis]);
+    E --> G;
+    F --> G;
+
+    G --> DB[(Supabase DB Write)];
+    DB --> H{📢 Real-Time Truth Broadcast};
+
+    subgraph "Instant Dissemination"
+        H --> I[🌐 Live Timeline Update];
+        H --> J[📧 Follower Email Alert];
+    end
+
+    %% Styling
+    style A fill:#e0f2fe,stroke:#3b82f6,stroke-width:2px,stroke-dasharray: 5 5
     style B fill:#e0f2fe,stroke:#3b82f6,stroke-width:2px
-    style C fill:#dbeafe,stroke:#3b82f6,stroke-width:2px
+    style C fill:#dbeafe,stroke:#3b82f6,stroke-width:3px
     style D fill:#e0e7ff,stroke:#6366f1,stroke-width:2px
     style E fill:#e0e7ff,stroke:#6366f1,stroke-width:2px
     style F fill:#e0e7ff,stroke:#6366f1,stroke-width:2px
     style G fill:#d1fae5,stroke:#10b981,stroke-width:2px
-    style H fill:#fef3c7,stroke:#f59e0b,stroke-width:2px
+    style DB fill:#e5e7eb,stroke:#4b5563,stroke-width:2px
+    style H fill:#fef3c7,stroke:#f59e0b,stroke-width:3px
     style I fill:#fce7f3,stroke:#ec4899,stroke-width:2px
     style J fill:#fce7f3,stroke:#ec4899,stroke-width:2px
 ```
